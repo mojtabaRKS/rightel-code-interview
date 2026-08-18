@@ -3,9 +3,10 @@ package main
 import (
 	"context"
 	"os/signal"
-	"sikabiz/user-importer/cmd/command"
-	"sikabiz/user-importer/internal/config"
 	"syscall"
+
+	"github.com/mojtabaRKS/rightel-code-interview/cmd/command"
+	"github.com/mojtabaRKS/rightel-code-interview/internal/config"
 
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"

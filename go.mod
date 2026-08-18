@@ -1,4 +1,4 @@
-module sikabiz/user-importer
+module github.com/mojtabaRKS/rightel-code-interview
 
 go 1.25.3
 

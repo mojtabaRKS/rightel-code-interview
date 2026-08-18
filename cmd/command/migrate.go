@@ -2,8 +2,9 @@ package command
 
 import (
 	"context"
-	"sikabiz/user-importer/internal/config"
-	"sikabiz/user-importer/internal/infra"
+
+	"github.com/mojtabaRKS/rightel-code-interview/internal/config"
+	"github.com/mojtabaRKS/rightel-code-interview/internal/infra"
 
 	"github.com/pkg/errors"
 	log "github.com/sirupsen/logrus"

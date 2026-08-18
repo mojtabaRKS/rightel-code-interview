@@ -4,7 +4,8 @@ import (
 	"context"
 	"fmt"
 	"net/http"
-	"sikabiz/user-importer/internal/config"
+
+	"github.com/mojtabaRKS/rightel-code-interview/internal/config"
 
 	"github.com/gin-gonic/gin"
 	log "github.com/sirupsen/logrus"

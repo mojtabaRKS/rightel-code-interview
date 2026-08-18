@@ -8,9 +8,9 @@ import (
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 
-	"sikabiz/user-importer/internal/api"
-	"sikabiz/user-importer/internal/config"
-	"sikabiz/user-importer/internal/infra"
+	"github.com/mojtabaRKS/rightel-code-interview/internal/api"
+	"github.com/mojtabaRKS/rightel-code-interview/internal/config"
+	"github.com/mojtabaRKS/rightel-code-interview/internal/infra"
 )
 
 type Server struct {
@@ -35,8 +35,7 @@ func (cmd Server) main(cfg *config.Config, ctx context.Context) {
 	}
 
 	server := api.New(cfg.AppEnv)
-	server.SetupAPIRoutes(
-	)
+	server.SetupAPIRoutes()
 
 	if err := server.Serve(ctx, fmt.Sprintf(":%d", cfg.HTTP.Port)); err != nil {
 		cmd.Logger.Fatal(err)

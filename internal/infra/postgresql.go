@@ -5,8 +5,9 @@ import (
 	"fmt"
 	"log"
 	"os"
-	"sikabiz/user-importer/internal/config"
 	"time"
+
+	"github.com/mojtabaRKS/rightel-code-interview/internal/config"
 
 	gormLogger "gorm.io/gorm/logger"
 
