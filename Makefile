@@ -69,13 +69,13 @@ migrator-down:
 	docker compose --profile tools down migrator
 
 migrate-up:
-	docker compose exec migrator ./sikabiz migrate up
+	docker compose exec migrator ./rightel migrate up
 
 migrate-down:
-	docker compose exec migrator ./sikabiz migrate down
+	docker compose exec migrator ./rightel migrate down
 
 migrate:
 	$(MAKE) migrate-up
 
 import:
-	docker compose exec server ./sikabiz import
+	docker compose exec server ./rightel import

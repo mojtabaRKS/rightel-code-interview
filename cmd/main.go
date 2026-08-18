@@ -16,7 +16,7 @@ func main() {
 	ctx, cancel := signal.NotifyContext(context.Background(), syscall.SIGINT, syscall.SIGTERM, syscall.SIGKILL)
 	defer cancel()
 
-	const description = "sikabiz user importer"
+	const description = "rightel user importer"
 	root := &cobra.Command{Short: description}
 
 	cfg, err := config.Load()

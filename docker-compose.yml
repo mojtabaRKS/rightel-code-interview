@@ -6,9 +6,9 @@ services:
     container_name: postgres
     restart: unless-stopped
     environment:
-      POSTGRES_DB: ${POSTGRES_DB:-sikabiz}
-      POSTGRES_USER: ${POSTGRES_USER:-sikabiz}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-sikabiz}
+      POSTGRES_DB: ${POSTGRES_DB:-rightel}
+      POSTGRES_USER: ${POSTGRES_USER:-rightel}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-rightel}
     ports:
       - "${POSTGRES_PORT:-5432}:5432"
     volumes:
@@ -28,7 +28,7 @@ services:
       - ./logs:/app/logs
     env_file:
       - .env
-    command: ["./sikabiz", "server"]
+    command: ["./rightel", "server"]
 
   migrator:
     build:
