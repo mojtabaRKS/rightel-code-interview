@@ -7,9 +7,9 @@ import (
 )
 
 // SetupAPIRoutes
-// @title						user Importer Service
+// @title						scaffold service
 // @version         			1.0.0
-// @description     			This APIs create server for importing users and fetch them
+// @description     			This APIs create server for scaffolding services
 // @Host 						localhost:8080
 // @BasePath  					/
 // @Schemes 					https
