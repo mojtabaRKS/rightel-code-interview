@@ -30,6 +30,25 @@ services:
       - .env
     command: ["./rightel", "server"]
 
+  expiration-worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: expiration-worker
+    restart: unless-stopped
+    depends_on:
+      - postgres
+    env_file:
+      - .env
+    environment:
+      POSTGRES_HOST: postgres
+    command:
+      - sh
+      - -c
+      - >-
+        echo '* * * * * /app/rightel expire-reservations >> /proc/1/fd/1 2>> /proc/1/fd/2'
+        > /etc/crontabs/root && exec crond -f -l 2
+
   migrator:
     build:
       context: .
@@ -45,5 +64,3 @@ services:
 
 volumes:
   postgres_data:
-
-

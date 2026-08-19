@@ -29,6 +29,7 @@ func main() {
 	root.AddCommand(
 		command.Server{Logger: logger}.Command(ctx, cfg),
 		command.MigrateCommand{Logger: logger}.Command(ctx, cfg),
+		command.ExpireReservations{Logger: logger}.Command(ctx, cfg),
 	)
 
 	if err := root.Execute(); err != nil {

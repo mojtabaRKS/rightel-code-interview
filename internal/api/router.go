@@ -1,9 +1,8 @@
 package api
 
 import (
-	"net/http"
-
-	"github.com/gin-gonic/gin"
+	"github.com/mojtabaRKS/rightel-code-interview/internal/api/handler/order"
+	"github.com/mojtabaRKS/rightel-code-interview/internal/api/handler/product"
 )
 
 // SetupAPIRoutes
@@ -13,12 +12,14 @@ import (
 // @Host 						localhost:8080
 // @BasePath  					/
 // @Schemes 					https
-func (s *Server) SetupAPIRoutes() {
+func (s *Server) SetupAPIRoutes(oh *order.OrderHandler, ph *product.ProductHandler) {
 	r := s.engine
 
 	{
-		r.GET("", func(c *gin.Context) {
-			c.JSON(http.StatusOK, gin.H{"message": "Hello, World!"})
-		})
+		r.POST("/reservations", oh.Reserve)
+		r.GET("/reservations/:id", oh.GetReservation)
+		r.POST("/reservations/:id/confirm", oh.Confirm)
+		r.POST("/reservations/:id/cancel", oh.Cancel)
+		r.GET("/products", ph.Search)
 	}
 }
